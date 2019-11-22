@@ -73,13 +73,14 @@ bindsym $mod+w layout tabbed
 bindsym $mod+y layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
-bindsym $mod+d exec rofi -show combi -show-icons
+bindsym $mod+d exec --no-startup-id rofi -show combi -show-icons
 bindsym $mod+q focus parent
 #bindsym $mod+d focus child
 bindsym $mod+Shift+a kill
-bindsym $mod+Control+l exec $i3lock
+bindsym $mod+Control+l exec --no-startup-id $i3lock
 bindsym $mod+t [instance="dropdown"] scratchpad show ; [instance="dropdown"] move position center
 bindsym $mod+b [instance="math"] scratchpad show ;[instance="math"] move position center
+bindsym Control+Shift+Escape exec --no-startup-id ksysguard
 
 # Special Windows
 for_window [instance="dropdown"] floating enable
@@ -93,6 +94,7 @@ for_window [instance="math"] move scratchpad
 exec --no-startup-id $term -n math -e bc
 
 for_window [instance="floating"] floating enable
+for_window [class="ksysguard"] floating enable
 
 # Workspace Accessor Variables 
 set $ws1 "1"
@@ -132,7 +134,7 @@ bindsym $mod+Shift+agrave move container to workspace number $ws10
 # Reload, Exit, etc 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Confirm Exit' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'Confirm Exit' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # Various Modes
 bindsym $mod+r mode "resize"

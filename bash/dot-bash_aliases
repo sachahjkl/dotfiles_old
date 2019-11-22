@@ -38,6 +38,7 @@ alias mkd="mkdir -pv"
 alias pacman="sudo pacman"
 alias p='sudo pacman'
 alias scrot="scrot '%Y-%m-%d-%h-%m-%s_\$wx\$h.png' -e 'mv \$f ~/img/scrot/'"
+alias dot="cd $DOT"
 
 #Directories
 alias home='cd ~'

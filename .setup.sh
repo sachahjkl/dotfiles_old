@@ -8,6 +8,8 @@ git submodule update
 base=(
     bash
     profile
+    i3
+    i3status
 )
 
 # folders that should, or only need to be installed for a local user
@@ -21,8 +23,6 @@ useronly=(
     glava
     gpicview
     gtk-3.0
-    i3
-    i3status
     mpd
     neofetch
     nvim
@@ -48,7 +48,7 @@ stowit() {
     # -R 			recursive
     # -t 			target
     # --dotfiles	replaces 'dot-'' by '.'
-    stow -v --dotfiles -R -t ${usr} ${app}
+    stow -v --dotfiles -t ${usr} ${app}
 }
 
 echo ""
