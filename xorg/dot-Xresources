@@ -1,0 +1,14 @@
+! Fonts {{{
+Xft.antialias: true
+Xft.hinting:   true
+Xft.rgba:      rgb
+Xft.hintstyle: hintfull
+Xft.dpi:       110
+! }}}
+
+#Xcursor.size: 16 # 16 by default on my laptop
+
+rofi.combi-modi: window,drun,run,ssh
+rofi.theme: .config/rofi/themes/Arc-Dark.rasi
+rofi.font: Fira Code Retina 14
+rofi.modi: combi

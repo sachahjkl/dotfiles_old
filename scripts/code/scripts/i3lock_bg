@@ -1,0 +1,2 @@
+#!/bin/sh
+[ ! -f '/tmp/back.png' ] && convert -size 1920x1080 xc:black /tmp/back.png; i3lock -i /tmp/back.png --nofork

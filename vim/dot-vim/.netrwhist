@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/sacha/.config/fontconfig'
+let g:netrw_dirhist_0='/home/sacha/.config/compton'
+let g:netrw_dirhist_9='/home/sacha/.config/alacritty'
+let g:netrw_dirhist_8='/home/sacha/.config/neofetch'
+let g:netrw_dirhist_7='/etc/X11/xorg.conf.d'
+let g:netrw_dirhist_6='/home/sacha/.config/i3blocks'
+let g:netrw_dirhist_5='/home/sacha/.config'
+let g:netrw_dirhist_4='/home/sacha/.config/qt5ct'
+let g:netrw_dirhist_3='/usr/share/gtk-3.0'
+let g:netrw_dirhist_2='/home/sacha/.config/i3'

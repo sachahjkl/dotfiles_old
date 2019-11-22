@@ -1,0 +1,63 @@
+#| |__   __ _ ___| |__  _ __ ___ 
+#| '_ \ / _` / __| '_ \| '__/ __|
+#| |_) | (_| \__ \ | | | | | (__ 
+#|_.__/ \__,_|___/_| |_|_|  \___|
+
+#export TERM=xterm-256color
+
+# cd in the folder if it exists
+shopt -s autocd
+
+# PS1
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+case "$TERM" in
+    xterm-*|*-256color|linux) color_prompt=yes;;
+esac
+
+if [ "$color_prompt" = yes ]; then
+    PS1="\[$(tput bold)\]\[\033[38;5;9m\][\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;214m\]\u\[$(tput sgr0)\]\[\033[38;5;143m\]@\[$(tput sgr0)\]\[\033[38;5;74m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;219m\]\w\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;34m\]\$(parse_git_branch)\[$(tput sgr0)\]\[\033[38;5;9m\]]\[$(tput sgr0)\]\[\033[38;5;253m\]\\$\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+else
+    PS1="\[$(tput bold)\][\[$(tput sgr0)\]\u@\h \w\$(parse_git_branch)\[$(tput bold)\]]\[$(tput sgr0)\]\[\033[38;5;253m\]\\$\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+fi
+
+export PS1="$PS1"
+
+#vi shortcuts
+set -o vi
+
+eval "`dircolors`"
+# Let there be color in ls!
+#export LS_OPTIONS='-hN --color=auto --group-directories-first'
+
+# Alias definitions that should work everywhere
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# Extra commands that don't get overriden by pulling changes from the repo
+if [ -f ~/.bashrc_extra ]; then
+    . ~/.bashrc_extra
+fi
+
+# Alias definitions that are specific to my distro
+# e.g. Cygwin-only stuff, apt-get shortcuts on Debian, etc.
+if [ -f ~/.bash_aliases.distro-specific ]; then
+    . ~/.bash_aliases.distro-specific
+fi
+
+# Functions
+
+# Quickly find if a file exists in current directory
+f() { find . -name "*$1*"; }
+
+# zsh like tab completion
+#bind 'set show-all-if-ambiguous on'
+#bind 'TAB:menu-complete'
+
+
+# Sugar
+#neofetch
+ufetch

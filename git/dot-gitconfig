@@ -1,0 +1,5 @@
+[user]
+	email = sacha.froment@gmail.com
+	name = Sacha Froment
+[credential]
+	helper = cache

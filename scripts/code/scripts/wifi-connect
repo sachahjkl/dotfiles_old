@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# TODO
+# ajouter la lecture d'arguments et un usage
+nmcli dev wifi connect "Honor 9 Lite Sacha" password 12345678
