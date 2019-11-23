@@ -34,20 +34,9 @@ build_prompt() {
   PS1+="→ $green$(parse_git_branch)$reset\\$ " # construct rest of prompt
 }
 
-# Old PS1
-#case "$TERM" in
-#    xterm-*|*-256color|linux) color_prompt=yes;;
-#esac
-#if [ "$color_prompt" = yes ]; then
-#    PS1="\[$(tput bold)\]\[\033[38;5;9m\][\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;214m\]\u\[$(tput sgr0)\]\[\033[38;5;143m\]@\[$(tput sgr0)\]\[\033[38;5;74m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;219m\]\w\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;34m\]\$(parse_git_branch)\[$(tput sgr0)\]\[\033[38;5;9m\]]\[$(tput sgr0)\]\[\033[38;5;253m\]\\$\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
-#else
-#    PS1="\[$(tput bold)\][\[$(tput sgr0)\]\u@\h \w\$(parse_git_branch)\[$(tput bold)\]]\[$(tput sgr0)\]\[\033[38;5;253m\]\\$\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
-#fi
-
 export PROMPT_COMMAND="build_prompt"
-export PS1="$PS1"
 
-#vi shortcuts
+# Vi shortcuts
 set -o vi
 
 eval "`dircolors`"
