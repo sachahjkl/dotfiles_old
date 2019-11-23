@@ -10,19 +10,41 @@ shopt -s autocd
 
 # PS1
 parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-case "$TERM" in
-    xterm-*|*-256color|linux) color_prompt=yes;;
-esac
+# Shorter & New PS1 
 
-if [ "$color_prompt" = yes ]; then
-    PS1="\[$(tput bold)\]\[\033[38;5;9m\][\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;214m\]\u\[$(tput sgr0)\]\[\033[38;5;143m\]@\[$(tput sgr0)\]\[\033[38;5;74m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;219m\]\w\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;34m\]\$(parse_git_branch)\[$(tput sgr0)\]\[\033[38;5;9m\]]\[$(tput sgr0)\]\[\033[38;5;253m\]\\$\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
-else
-    PS1="\[$(tput bold)\][\[$(tput sgr0)\]\u@\h \w\$(parse_git_branch)\[$(tput bold)\]]\[$(tput sgr0)\]\[\033[38;5;253m\]\\$\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
-fi
+build_prompt() {
+  EXIT=$?               # save exit code of last command
+  red='\[\033[38;5;9m\]'    # colors
+  green='\[\033[38;5;34m\]'
+  blue='\[\033[38;5;74m\]'
+  pink='\[\033[38;5;219m\]'
+  white='\[\033[38;5;15m\]'
+  bold='\[$(tput bold)\]'
+  reset='\[$(tput sgr0)\]'
+  PS1="$blue\w "
 
+  if [ $EXIT != 0 ]; then  # add arrow color dependent on exit code
+    PS1+="$red"
+  else
+    PS1+="$green"
+  fi
+  PS1+="→ $green$(parse_git_branch)$reset\\$ " # construct rest of prompt
+}
+
+# Old PS1
+#case "$TERM" in
+#    xterm-*|*-256color|linux) color_prompt=yes;;
+#esac
+#if [ "$color_prompt" = yes ]; then
+#    PS1="\[$(tput bold)\]\[\033[38;5;9m\][\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;214m\]\u\[$(tput sgr0)\]\[\033[38;5;143m\]@\[$(tput sgr0)\]\[\033[38;5;74m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;219m\]\w\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;34m\]\$(parse_git_branch)\[$(tput sgr0)\]\[\033[38;5;9m\]]\[$(tput sgr0)\]\[\033[38;5;253m\]\\$\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+#else
+#    PS1="\[$(tput bold)\][\[$(tput sgr0)\]\u@\h \w\$(parse_git_branch)\[$(tput bold)\]]\[$(tput sgr0)\]\[\033[38;5;253m\]\\$\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+#fi
+
+export PROMPT_COMMAND="build_prompt"
 export PS1="$PS1"
 
 #vi shortcuts
