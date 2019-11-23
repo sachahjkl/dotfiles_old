@@ -40,7 +40,16 @@ alias p='sudo pacman'
 alias scrot="scrot '%Y-%m-%d-%h-%m-%s_\$wx\$h.png' -e 'mv \$f ~/img/scrot/'"
 alias dot="cd $DOT"
 
-#Directories
+# Aptitude
+alias apti="sudo apt install"
+alias apts="sudo apt search"
+alias aptupg="sudo apt upgrade"
+alias aptupd="sudo apt update"
+alias aptrem="sudo apt remove"
+alias aptclean="sudo apt autoremove"
+alias aptfull="sudo apt full-upgrade"
+
+# Directories
 alias home='cd ~'
 alias root='cd /'
 alias sconfig='vim ~/.ssh/config'
@@ -58,9 +67,9 @@ alias g='git'
 alias vimrc='vim ~/.vimrc'
 alias bashrc='vim ~/.bashrc'
 alias bashaliases='vim ~/.bash_aliases'
+alias profile='vim ~/.profile'
 alias loadbash='source ~/.bashrc'
 alias loadaliases='source ~/.bash_aliases'
-alias profile='vim ~/.profile'
 alias loadprofile='source ~/.profile'
 alias xinitrc="vim ~/.xinitrc"
 alias xres="vim ~/.Xresources"

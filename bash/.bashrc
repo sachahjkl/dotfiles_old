@@ -82,4 +82,4 @@ f() { find . -name "*$1*"; }
 
 # Sugar
 #neofetch
-ufetch
+#ufetch
