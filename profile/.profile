@@ -1,5 +1,3 @@
-[[ -f ~/.bashrc ]] && . ~/.bashrc
-
 export GOPATH="$HOME/apps/gopath"
 export EDITOR="vim"
 #export VISUAL="subl"
@@ -11,6 +9,8 @@ export DOT="$HOME/code/dotfiles"
 export FILE="thunar"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export PATH="$PATH:/opt:$SCRIPTS:$HOME:$GOPATH:$GOPATH/bin"
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
 
 if [[ "$(tty)" = "/dev/tty1" ]]; then
 	pgrep i3 || startx

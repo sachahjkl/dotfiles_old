@@ -47,8 +47,7 @@ stowit() {
     # -v 			verbose
     # -R 			recursive
     # -t 			target
-    # --dotfiles	replaces 'dot-'' by '.'
-    stow -v --dotfiles -t ${usr} ${app}
+    stow -v -t ${usr} ${app}
 }
 
 echo ""
