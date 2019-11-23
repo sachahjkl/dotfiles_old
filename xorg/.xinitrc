@@ -32,6 +32,7 @@ fi
 nitrogen --restore &
 picom --config ~/.config/picom/picom.conf -b 
 nm-applet &
+blueman-applet &
 #xautolock -time 5 -locker 
 setxkbmap -layout fr &
 unclutter &
