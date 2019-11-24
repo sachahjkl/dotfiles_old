@@ -29,6 +29,7 @@ useronly=(
     orage
     picom
     qt5ct
+    st
     rofi
     screenkeys
     scripts
