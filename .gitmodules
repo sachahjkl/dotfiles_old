@@ -1,0 +1,3 @@
+[submodule "st/code/repos/st"]
+	path = st/code/repos/st
+	url = https://gitlab.com/sachafroment/st
