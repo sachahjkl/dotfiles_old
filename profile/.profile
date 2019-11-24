@@ -9,6 +9,7 @@ export DOT="$HOME/code/dotfiles"
 export FILE="thunar"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export PATH="$PATH:/opt:$SCRIPTS:$HOME:$GOPATH:$GOPATH/bin"
+export DISPLAY=:0
 export LIBGL_ALWAYS_INDIRECT=1
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc

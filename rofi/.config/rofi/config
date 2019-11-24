@@ -1,4 +1,5 @@
-rofi.combi-modi: window,drun,run,ssh
-rofi.theme: .config/rofi/Arc-Dark.rasi
-rofi.font: Fira Code Retina 14
+rofi.combi-modi: window,drun,run
+rofi.theme: .config/rofi/themes/Arc-Dark.rasi
+rofi.font: Fira Code Medium 14
 rofi.modi: combi
+#include "/usr/share/rofi/themes//Arc-Dark.theme"

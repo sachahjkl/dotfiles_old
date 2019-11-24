@@ -1,0 +1,8 @@
+#!/bin/bash
+setxkbmap fr
+nitrogen --restore &
+compton -b
+unclutter &
+#psensor &
+#orage &
+exec i3

@@ -2,7 +2,7 @@
 # Author: Sacha Froment
 
 # Variables Definitions
-set $mod Mod4
+set $mod Mod1
 set $i3lock $SCRIPTS/i3lock_bg 
 set $i3lock_fancy i3lock-fancy -p -f Fira-Code-Medium -t 'Type password to unlock'
 set $nm_applet nm-applet
@@ -84,12 +84,12 @@ bindsym Control+Shift+Escape exec --no-startup-id ksysguard
 
 # Special Windows
 for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize 625 400
+for_window [instance="dropdown"] resize set 625 400
 for_window [instance="dropdown"] move scratchpad
 exec --no-startup-id $term -n dropdown 
 
 for_window [instance="math"] floating enable
-for_window [instance="math"] resize 625 400
+for_window [instance="math"] resize set 625 400
 for_window [instance="math"] move scratchpad
 exec --no-startup-id $term -n math -e bc
 
