@@ -1,7 +1,24 @@
 # Luke's config for the Zoomer Shell
 
 autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+setopt PROMPT_SUBST # nescessary to get functions in PS1
+#PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+# Shorter & New PS1 
+
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+exit_color() {
+  EXIT=$?                   # save exit code of last command
+  color="yellow"
+  if [ $EXIT != 0 ]; then  # add arrow color dependent on exit code
+    echo "red"
+  else
+    echo "green"
+  fi
+}
+
+PS1='%{$fg[blue]%}%~ %{$fg[$(exit_color)]%}→ %{$fg[green]%}$(parse_git_branch)%{$reset_color%}$ ' # construct rest of prompt
 
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
@@ -68,4 +85,4 @@ bindkey -s '^o' 'lfcd\n'  # zsh
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-
+ufetch

@@ -83,6 +83,7 @@ alias \
 	vimrc='vim ~/.vimrc' \
 	profile='vim ~/.profile' \
 	loadbash='source ~/.bashrc' \
+	loadzsh='source ~/.config/zsh/.zshrc'
 	loadaliases='source ~/.config/aliasrc' \
 	loadprofile='source ~/.profile' \
 	xinitrc="vim ~/.xinitrc" \
