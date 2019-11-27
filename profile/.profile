@@ -7,7 +7,7 @@ export TERMINAL="st"
 export SCRIPTS="$HOME/code/scripts"
 export DOT="$HOME/code/dotfiles"
 export FILE="thunar"
-export QT_QPA_PLATFORMTHEME="qt5ct"
+export QT_QPA_PLATFORMTHEME="gtk2"
 export PATH="$PATH:/opt:$SCRIPTS:$HOME:$GOPATH:$GOPATH/bin"
 #export LIBGL_ALWAYS_INDIRECT=1
 
