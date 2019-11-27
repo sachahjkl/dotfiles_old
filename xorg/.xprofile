@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# load settings from Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+
+# Startup Sequence
+nitrogen --restore &
+picom --config ~/.config/picom/picom.conf -b 
+nm-applet &
+blueman-applet &
+#xautolock -time 5 -locker 
+setxkbmap -layout fr &
+unclutter &
+mpd ~/.config/mpd/mpd.conf &
+laptop_mode &
+cbatticon &
+psensor &
+orage &
+xss-lock --transfer-sleep-lock -- $i3lock &
+#udiskie &
+kmix &

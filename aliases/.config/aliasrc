@@ -1,0 +1,96 @@
+#Alias/Shortcuts
+
+# Colorize commands when possible.
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"
+
+# Default to human readable figures
+alias df='df -h'
+alias du='du -h'
+
+#ls
+alias \
+	ll='ls -lh' \
+	l='ls -lhA' \
+	la='ls -a' \
+	lla='ls -hla' 
+
+# if 'lsd' command is installed, replace ls with it
+if command -v lsd 1&> /dev/null  ;then
+	alias ls='lsd $LS_OPTIONS'
+fi
+
+# Commands
+alias \
+	q='exit' \
+	c='clear' \
+	h='history' \
+	cs='clear;ls' \
+	pd='pwd' \
+	pd='pwd' \
+	t='time' \
+	k='kill' \
+	del="\rm" \
+	rm="trash" \
+	svim="sudo nvim" \
+	vim="nvim" \
+	v="vim" \
+	r="sudo ranger" \
+	null='/dev/null' \
+	grep="grep --color=auto" \
+	..="cd .." \
+	cp="cp -iv" \
+	...="cd ../.." \
+	mkd="mkdir -pv" \
+	scrot="scrot '%Y-%m-%d-%h-%m-%s_\$wx\$h.png' -e 'mv \$f ~/img/scrot/'" \
+	dot="cd $DOT"
+
+# Pacman
+alias pacman="sudo pacman"
+alias p='sudo pacman'
+
+# Aptitude
+alias \
+	apti="sudo apt install" \
+	apts="sudo apt search" \
+	aptupg="sudo apt upgrade" \
+	aptupd="sudo apt update" \
+	aptrem="sudo apt remove" \
+	aptclean="sudo apt autoremove" \
+	aptfull="sudo apt full-upgrade"
+
+# Directories
+alias \
+	home='cd ~' \
+	root='cd /' \
+	sconfig='vim ~/.ssh/config'
+
+# Common project directories
+alias \
+	dl='cd ~/dl' \
+	scripts='cd $SCRIPTS' \
+	img='cd ~/img' \
+	docs='cd ~/docs' 
+
+#Git
+alias g='git'
+
+# Shortcuts to vimrc and bashrc
+alias \
+	vimrc='vim ~/.vimrc' \
+	profile='vim ~/.profile' \
+	loadbash='source ~/.bashrc' \
+	loadaliases='source ~/.config/aliasrc' \
+	loadprofile='source ~/.profile' \
+	xinitrc="vim ~/.xinitrc" \
+	xres="vim ~/.Xresources"
+#alias bashrc='vim ~/.bashrc'
+#alias bashaliases='vim ~/.bash_aliases'
+#alias loadaliases='source ~/.bash_aliases'
+
+# Sugar
+#alias n="neofetch"
+alias n="bonsai -n -L 20 -g 35,20 > $SCRIPTS/neofetch/my_bonsai_art.txt && neofetch --ascii $SCRIPTS/neofetch/my_bonsai_art.txt --ascii_colors 11 3 10 2 0"
