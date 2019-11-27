@@ -1,8 +1,0 @@
-name: "dotfiles_old"
-description: "# Sacha FROMENT dotfiles managed using GNU Stow\r\nrun/edit setup.sh in order to install every dotfiles or stow each of them manually\r\n"
-topics: []
-homepage: ""
-source:
-  provider: gitlab
-  namespace: "sachahjkl"
-  path: "sachahjkl/dotfiles_old"

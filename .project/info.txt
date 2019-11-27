@@ -1,0 +1,3 @@
+name=dotfiles_old
+description=# Sacha FROMENT dotfiles managed using GNU Stow
+run/edit setup.sh in order to install every dotfiles or stow each of them manually
