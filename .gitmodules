@@ -1,3 +1,6 @@
 [submodule "st/code/repos/st"]
 	path = st/code/repos/st
 	url = https://gitlab.com/sachafroment/st
+[submodule "bash"]
+	path = bash
+	url = https://gitlab.com/sachafroment/bash
