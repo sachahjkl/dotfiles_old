@@ -2,7 +2,7 @@
 
 autoload -U colors && colors
 setopt PROMPT_SUBST # nescessary to get functions in PS1
-#PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+#PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}%# "
 # Shorter & New PS1 
 
 parse_git_branch() {
@@ -18,7 +18,7 @@ exit_color() {
   fi
 }
 
-PS1='%{$fg[blue]%}%~ %{$fg[$(exit_color)]%}→ %{$fg[green]%}$(parse_git_branch)%{$reset_color%}$ ' # construct rest of prompt
+PS1='%{$fg[blue]%}%~ %{$fg[$(exit_color)]%}→ %{$fg[green]%}$(parse_git_branch)%{$reset_color%}%# ' # construct rest of prompt
 
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
