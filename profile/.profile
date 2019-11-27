@@ -1,13 +1,13 @@
-export GOPATH="$HOME/apps/gopath"
-export EDITOR="vim"
-#export VISUAL="subl"
+export EDITOR="nvim"
 export VISUAL="$EDITOR"
+export READER="zathura"
 export BROWSER="firefox"
 export TERMINAL="st"
 export SCRIPTS="$HOME/code/scripts"
-export DOT="$HOME/code/dotfiles"
 export FILE="thunar"
+export DOT="$HOME/code/dotfiles"
 export QT_QPA_PLATFORMTHEME="gtk2"
+export GOPATH="$HOME/apps/gopath"
 export PATH="$PATH:/opt:$SCRIPTS:$HOME:$GOPATH:$GOPATH/bin"
 #export LIBGL_ALWAYS_INDIRECT=1
 
