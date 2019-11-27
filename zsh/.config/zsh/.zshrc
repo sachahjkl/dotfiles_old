@@ -23,6 +23,12 @@ PS1='%{$fg[blue]%}%~ %{$fg[$(exit_color)]%}→ %{$fg[green]%}$(parse_git_branch)
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
+
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.cache/zsh/history
+setopt appendhistory
+
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
