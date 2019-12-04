@@ -2,6 +2,7 @@
 
 autoload -U colors && colors
 setopt PROMPT_SUBST # nescessary to get functions in PS1
+setopt autocd
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}%# "
 # Shorter & New PS1 
 
@@ -38,11 +39,11 @@ compinit
 _comp_options+=(globdots)
 
 # Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
+#bindkey -M menuselect 'h' vi-backward-char
+#bindkey -M menuselect 'k' vi-up-line-or-history
+#bindkey -M menuselect 'l' vi-forward-char
+#bindkey -M menuselect 'j' vi-down-line-or-history
+#bindkey -v '^?' backward-delete-char
 
 export KEYTIMEOUT=1
 
@@ -63,14 +64,16 @@ zle -N zle-keymap-select
 
 zle-line-init() {
     zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
+    echo -ne '\e[5 q'
 }
 zle -N zle-line-init
 
 # Use beam shape cursor on startup.
-echo -ne '\e[5 q'
+_fix_cursor(){
+	echo -ne '\e[5 q'
+}
 # Use beam shape cursor for each new prompt.
-preexec() { echo -ne '\e[5 q' ;}
+precmd_functions+=(_fix_cursor)
 
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
