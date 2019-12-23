@@ -17,6 +17,7 @@ laptop_mode&
 cbatticon&
 psensor&
 orage&
-xss-lock --transfer-sleep-lock -- $i3lock &
+xss-lock --transfer-sleep-lock -- $SCRIPTS/i3lock_bg &
 #udiskie &
-kmix &
+#kmix &
+pasystray &
