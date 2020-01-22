@@ -45,6 +45,12 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
+# Fix Home,End,Delete,etc
+autoload zkbd
+bindkey "^[[H" beginning-of-line
+bindkey "^[[4~" end-of-line
+bindkey "^[[P" delete-char
+
 export KEYTIMEOUT=1
 
 # Better history lookup
