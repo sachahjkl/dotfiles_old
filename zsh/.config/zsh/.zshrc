@@ -50,6 +50,8 @@ autoload zkbd
 bindkey "^[[H" beginning-of-line
 bindkey "^[[4~" end-of-line
 bindkey "^[[P" delete-char
+bindkey '^[[1;5C' emacs-forward-word
+bindkey '^[[1;5D' emacs-backward-word
 
 export KEYTIMEOUT=1
 
