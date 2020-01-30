@@ -25,7 +25,7 @@ export LESS=-R
 #export LIBGL_ALWAYS_INDIRECT=1
 
 # Start graphical server on tty1 if not already running.
-[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && exec startx
+#[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && exec startx
 
 # Switch escape and caps if tty and no passwd required:
 #sudo -n loadkeys ~/.local/share/ttymaps/ttymaps.kmap 2>/dev/null

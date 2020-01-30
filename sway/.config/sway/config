@@ -1,10 +1,11 @@
-# Title: i3 Config File
+# Title: sway Config File
 # Author: Sacha Froment
 
+exec NetworkManager
 
 # Variables Definitions
 set $mod Mod4
-set $i3lock $SCRIPTS/i3lock_bg 
+set $swaylock $SCRIPTS/swaylock_bg 
 set $i3lock_fancy i3lock-fancy -p -f Fira-Code-Medium -t 'Type password to unlock'
 set $nm_applet nm-applet
 set $font Fira Code Medium 10
@@ -82,7 +83,7 @@ bindsym $mod+d exec --no-startup-id rofi -show combi -show-icons
 bindsym $mod+q focus parent
 #bindsym $mod+d focus child
 bindsym $mod+Shift+a kill
-bindsym $mod+Control+l exec --no-startup-id $i3lock
+bindsym $mod+Control+l exec --no-startup-id $swaylock
 bindsym $mod+t [instance="dropdown"] scratchpad show ; [instance="dropdown"] move position center
 bindsym $mod+b [instance="math"] scratchpad show ;[instance="math"] move position center
 bindsym Control+Shift+Escape exec --no-startup-id ksysguard
@@ -229,16 +230,16 @@ bar {
 	#position top 
 	status_command	i3status #i3blocks
 	swaybar_command	swaybar
-	colors{
-		separator $red
-	}
+	#colors{
+	#	separator $red
+	#}
 	#i3bar_command	i3bar -t
 	
 	position bottom
     mode dock
     colors {
         statusline #76c2d6
-        background $black#$transparent
+        background  $transparent
 
         # Type                     border     background    text
         focused_workspace         #191919      #191919    #bf3f34

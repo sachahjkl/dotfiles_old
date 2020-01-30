@@ -236,7 +236,7 @@ bar {
     mode dock
     colors {
         statusline #76c2d6
-        background $black#$transparent
+        background $black #$transparent
 
         # Type                     border     background    text
         focused_workspace         #191919      #191919    #bf3f34

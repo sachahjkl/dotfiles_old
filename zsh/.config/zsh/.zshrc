@@ -52,6 +52,7 @@ bindkey "^[[4~" end-of-line
 bindkey "^[[P" delete-char
 bindkey '^[[1;5C' emacs-forward-word
 bindkey '^[[1;5D' emacs-backward-word
+bindkey '^H' backward-delete-word
 
 export KEYTIMEOUT=1
 
