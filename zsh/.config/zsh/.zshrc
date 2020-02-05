@@ -44,6 +44,12 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
+# Fix Home,End,Delete,etc
+autoload zkbd
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+bindkey "^[[3~" delete-char
+
 export KEYTIMEOUT=1
 
 autoload -U history-search-end
@@ -93,8 +99,8 @@ lfcd () {
     fi
 }
 
-bindkey -s '^o' 'lfcd\n'  # zsh
+#bindkey -s '^o' 'lfcd\n'  # zsh
 
 # Load zsh-syntax-highlighting; should be last.
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 #ufetch
