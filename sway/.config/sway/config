@@ -140,7 +140,7 @@ bindsym $mod+Shift+agrave move container to workspace number $ws10
 # Reload, Exit, etc 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'Confirm Exit' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id "swaynag -t warning -m 'Confirm Exit' -B 'Yes, exit sway' 'swaymsg exit'"
 
 # Various Modes
 bindsym $mod+r mode "resize"
