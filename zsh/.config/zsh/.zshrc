@@ -19,7 +19,7 @@ exit_symbol() {
   fi
 }
 
-PS1='%{$fg[blue]%}%~ %{$(exit_symbol)%}→ %{$fg[green]%}$(parse_git_branch)%{$reset_color%}%# ' # construct rest of prompt
+PS1='%{$fg[blue]%}%~ %{$(exit_symbol)%} %{$fg[green]%}$(parse_git_branch)%{$reset_color%}%# ' # construct rest of prompt
 
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
