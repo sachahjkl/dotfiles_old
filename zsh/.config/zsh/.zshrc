@@ -8,17 +8,17 @@ setopt PROMPT_SUBST # nescessary to get functions in PS1
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
-exit_color() {
+exit_symbol() {
   EXIT=$?                   # save exit code of last command
   color="yellow"
   if [ $EXIT != 0 ]; then  # add arrow color dependent on exit code
-    echo "red"
+    echo "$fg[red]△"
   else
-    echo "green"
+    echo "$fg[green]▲"
   fi
 }
 
-PS1='%{$fg[blue]%}%~ %{$fg[$(exit_color)]%}→ %{$fg[green]%}$(parse_git_branch)%{$reset_color%}%# ' # construct rest of prompt
+PS1='%{$fg[blue]%}%~ %{$(exit_symbol)%} %{$fg[green]%}$(parse_git_branch)%{$reset_color%}%# ' # construct rest of prompt
 
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
@@ -45,7 +45,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 # Fix Home,End,Delete,etc
-autoload zkbd
+#autoload zkbd
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
