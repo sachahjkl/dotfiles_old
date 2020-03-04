@@ -7,7 +7,7 @@ set $i3lock i3lock -f -m -k -B=10 --indicator --datecolor=FFFFFFFF\
 	--timecolor=FFFFFFFF
 set $i3lock_fancy i3lock-fancy -p -f Fira-Code-Medium -t 'Type password to unlock'
 set $nm_applet nm-applet
-set $font Fira Code Medium 10
+set $font Cascadia Code Regular 10
 set $border_width 5
 set $gaps_width 10
 set $term st

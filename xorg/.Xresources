@@ -10,5 +10,5 @@ Xft.dpi:       110
 
 rofi.combi-modi: window,drun,run,ssh
 rofi.theme: .config/rofi/Arc-Dark.rasi
-rofi.font: Fira Code Retina 14
+rofi.font: Cascadia Code Regular 14
 rofi.modi: combi
