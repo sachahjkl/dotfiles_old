@@ -3,6 +3,8 @@
 # load settings from Xresources
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
+# Variables
+
 # Startup Sequence
 setxkbmap -layout fr &
 nitrogen --restore 
@@ -18,7 +20,7 @@ laptop_mode&
 cbatticon&
 psensor&
 orage&
-xss-lock --transfer-sleep-lock -- $SCRIPTS/i3lock_bg &
+xss-lock --transfer-sleep-lock -- i3lock -f -m -k -B=10 --indicator --datecolor=FFFFFFFF --timecolor=FFFFFFFF &
 #udiskie &
 #kmix &
 pasystray &
