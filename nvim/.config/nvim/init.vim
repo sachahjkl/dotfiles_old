@@ -33,4 +33,3 @@ set background=dark
 let g:airline#extension#tabline#enabled = 1
 
 let mapleader = ' '
-
