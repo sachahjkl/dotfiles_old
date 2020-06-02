@@ -36,6 +36,7 @@ Plug 'PotatoesMaster/i3-vim-syntax'
 
 call plug#end()
 
+set termguicolors
 colorscheme codedark
 set background=dark
 
