@@ -807,9 +807,9 @@ key_bindings:
   #- { key: W,      mods: Command,         action: Quit             }
   #- { key: F,      mods: Command|Control, action: ToggleFullscreen }
 
-  - { key: K,        mods: Control, action: IncreaseFontSize                 } 
-  - { key: J,        mods: Control, action: DecreaseFontSize                 }
-  - { key: N,    mods: Control,     action: SpawnNewInstance                 }
+  - { key: K,        mods: Alt,     action: IncreaseFontSize                 } 
+  - { key: J,        mods: Alt,     action: DecreaseFontSize                 }
+  - { key: N,       mods: Control,  action: SpawnNewInstance                 }
   - { key: Paste,                   action: Paste                            }
   - { key: Copy,                    action: Copy                             }
   - { key: L,        mods: Control, action: ClearLogNotice                   }
