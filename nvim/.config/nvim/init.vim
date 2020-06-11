@@ -1,3 +1,10 @@
+"       _
+"__   _(_)_ __ ___  _ __ ___
+"\ \ / / | '_ ` _ \| '__/ __|
+" \ V /| | | | | | | | | (__
+"  \_/ |_|_| |_| |_|_|  \___|
+"
+
 let mapleader = ' '
 
 syntax on
@@ -119,3 +126,5 @@ autocmd FileType markdown normal zR
 " Resize splits
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 1/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 1/3)<CR>
+
+nnoremap <Leader><F3> :edit! +set\ dir=stdpath('config') init.vim<CR>
